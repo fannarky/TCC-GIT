@@ -1,0 +1,6 @@
+https://loiane.training/
+https://getbootstrap.com/docs/4.3/getting-started/theming/
+https://angular.io/guide/router
+https://angular.io/cli/generate
+https://angular-2-training-book.rangle.io/handout/routing/redirects.html
+https://brianflove.com/2016/10/23/angular2-breadcrumb-using-router/
