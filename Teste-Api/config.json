@@ -1,0 +1,14 @@
+{
+    "database": {
+        "server": "jsca.database.windows.net",
+        "user": "adm_jscan",
+        "password": "Y33bkxs9@",
+        "database": "jsan_db",
+        "options": {
+            "encrypt": true
+        }
+    },
+    "security": {
+        "key": "CHAVE_SEGURANCA"
+    }
+}
