@@ -1,10 +1,9 @@
 'use strict';
 var config = require("./config").database;
-var isNull = require('./script').isNull;
 
 module.exports = {
 	'query': function(queryString) {
-        if (isNull(queryString)) {
+        if (queryString == undefined || queryString == "") {
             return null;
         } else {
             var sql = require('mssql');
