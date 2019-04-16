@@ -63,7 +63,7 @@ router.post('/cadastro', (req, res) => {
     criarUser(null, NMFUNCIONARIO, NMEMAIL, NMCARGO, NMSENHA);
 });
 
-router.get('/apis', (res, req) =>{
+router.get('/funcionarios', (res, req) =>{
 
     getFuncionariosPCs(18).then((resultado) =>{
         console.log(resultado);
@@ -72,9 +72,10 @@ router.get('/apis', (res, req) =>{
 });
 
 function getFuncionariosPCs(IDGESTOR){
+    //caso seja necessário adicionar os registros de leitura do computador, adicionar a linha abaixo ao where.
+    //INNER JOIN TB_LEITURA_PC ON TB_COMPUTADOR.IDCOMPUTADOR = TB_LEITURA_PC.IDCOMPUTADOR 
     let string = `SELECT * FROM TB_FUNCIONARIO
-                     INNER JOIN TB_COMPUTADOR ON TB_FUNCIONARIO.IDFUNCIONARIO = TB_COMPUTADOR.IDFUNCIONARIO
-                        INNER JOIN TB_LEITURA_PC ON TB_COMPUTADOR.IDCOMPUTADOR = TB_LEITURA_PC.IDCOMPUTADOR WHERE IDGESTOR = ${IDGESTOR}`;
+                     INNER JOIN TB_COMPUTADOR ON TB_FUNCIONARIO.IDFUNCIONARIO = TB_COMPUTADOR.IDFUNCIONARIO WHERE IDGESTOR = ${IDGESTOR}`;
     return new Promise((resolve, reject) => {
         Database.query(string).then(resultado => {
             //console.log(resultado.recordset);
