@@ -71,6 +71,14 @@ router.get('/funcionarios', (res, req) =>{
 
 });
 
+router.get('/apis', (res, req) => {
+    // INNER JOIN PARA PEGAR OS DADOS DA API
+    // SELECT * FROM TB_FUNCIONARIO
+    //     INNER JOIN FUNCIONARIO_API ON TB_FUNCIONARIO.IDFUNCIONARIO = FUNCIONARIO_API.IDFUNCIONARIO
+    //         INNER JOIN TB_API ON FUNCIONARIO_API.IDAPI = TB_API.IDAPI;
+        
+});
+
 function getFuncionariosPCs(IDGESTOR){
     //caso seja necessário adicionar os registros de leitura do computador, adicionar a linha abaixo ao where.
     //INNER JOIN TB_LEITURA_PC ON TB_COMPUTADOR.IDCOMPUTADOR = TB_LEITURA_PC.IDCOMPUTADOR 
