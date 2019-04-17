@@ -23,6 +23,11 @@ router.post('/login', (req, res) => {
         //console.log(valido);
         const senhaBanco = linhas[0].nmSenha;
         const valido = senha === senhaBanco ? true : false;
+        let user = {
+            nome = linhas[0].nmFuncionario,
+            idGestor = linhas[0].idGestor
+        }
+        req.session.user = user;
         console.log(valido);
 
     })
@@ -65,17 +70,26 @@ router.post('/cadastro', (req, res) => {
 
 router.get('/funcionarios', (res, req) =>{
 
-    getFuncionariosPCs(18).then((resultado) =>{
+
+    getFuncionariosPCs(req.session.user.idGestor).then((resultado) =>{
         console.log(resultado);
     });
 
 });
 
 router.get('/apis', (res, req) => {
-    // INNER JOIN PARA PEGAR OS DADOS DA API
-    // SELECT * FROM TB_FUNCIONARIO
-    //     INNER JOIN FUNCIONARIO_API ON TB_FUNCIONARIO.IDFUNCIONARIO = FUNCIONARIO_API.IDFUNCIONARIO
-    //         INNER JOIN TB_API ON FUNCIONARIO_API.IDAPI = TB_API.IDAPI;
+    
+    //necessário dados no banco de dados para verificar se está funcionando
+    // return new Promise((resolve, reject) => {
+    //     Database.query("SELECT * FROM TB_FUNCIONARIO "+
+    //         +"INNER JOIN FUNCIONARIO_API ON TB_FUNCIONARIO.IDFUNCIONARIO = FUNCIONARIO_API.IDFUNCIONARIO "+
+    //         +    "INNER JOIN TB_API ON FUNCIONARIO_API.IDAPI = TB_API.IDAPI").then(resultado => {
+    //             console.log(resultado);
+    //         });
+        
+    // });
+
+
         
 });
 
