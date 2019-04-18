@@ -15,7 +15,9 @@ router.post('/login', (req, res) => {
         console.log("Sucesso!!");
     }
     Database.query(`Select * from TB_FUNCIONARIO where nmEmail = '${login}' `).then(resultadoQuery =>{
+      
         const linhas = resultadoQuery.recordsets[0];
+        req.session.id = linhas[0].IDFUNCIONARIO;
         console.log(linhas);
         res.status(200).send(resultadoQuery);
         //console.log(resultadoQuery.recordset[0].nmSenha); // método 1 para capturar dado
@@ -25,11 +27,22 @@ router.post('/login', (req, res) => {
         const valido = senha === senhaBanco ? true : false;
         console.log(valido);
         
-    })
+    });
     
 
     console.log(login);
     console.log(senha);
+});
+
+router.get('/pc', (req, res) => {
+    Database.query(`Select * from TB_COMPUTADOR inner join tb_leitura_pc on tb_computador.idcomputador = tb_leitura_pc.idcomputador WHERE IDFUNCIONARIO = '${req.session.id}' `).then(resultadoQuery =>{
+        
+        //resultado na variavel linhas
+        //em json, basta colocar o nome do campo do banco após o recordsets
+        const linhas = resultadoQuery.recordsets[0];
+        
+        
+    });
 });
 
 router.post('/cadastro', (req, res) => {
