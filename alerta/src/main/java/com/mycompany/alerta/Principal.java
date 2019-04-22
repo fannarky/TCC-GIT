@@ -16,21 +16,21 @@ public class Principal {
         //sis.getOperatingSystem();
         
         
-        HardwareAbstractionLayer hal = sis.getHardware();
+        //HardwareAbstractionLayer hal = sis.getHardware();
         
         
-        HWDiskStore disk[] = hal.getDiskStores();
+        //HWDiskStore disk[] = hal.getDiskStores();
         
-        System.out.println(Arrays.toString(disk));
+        //System.out.println(Arrays.toString(disk));
 
         //sis.getHardware().getFileSystem().getFileStores().length;
         //sis.getHardware().getFileSystem().getFileStores()[i].getLogicalVolume();
         //sis.getHardware().getFileSystem().getFileStores()[i].getName();
         //System.out.println(sis.getHardware().getDiskStores());
 
-        sis.getHardware().getComputerSystem().getModel();
+        //sis.getHardware().getComputerSystem().getModel();
 
-        System.out.println(System.getProperty("user.name"));
+        //System.out.println(System.getProperty("user.name"));
 
         //InetAddress.getLocalHost().getHostName();
 
@@ -68,9 +68,9 @@ public class Principal {
         
         //String resposta = info.isCheia(sis.getHardware().getMemory().getTotal(), sis.getHardware().getMemory().getAvailable()) ? "Alerta: memória entrando no limite" : null;
         
-        alertaMemoria.start();
-
+        //alertaMemoria.start();
         
+        System.out.println(info.isCheiaInt(sis.getHardware().getMemory().getTotal(), sis.getHardware().getMemory().getAvailable()));
         
         
     }

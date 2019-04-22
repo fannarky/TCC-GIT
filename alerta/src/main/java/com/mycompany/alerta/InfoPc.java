@@ -10,8 +10,11 @@ package com.mycompany.alerta;
  * @author pssimeao
  */
 public class InfoPc {
-    public long memDisponivel;
+    public long  memDisponivel;
     public long memTotal;
+    
+    public long porcentagem;
+    public long porcentagem2;
     
     public Boolean isCheia(long _memTotal, long _memDisponivel){
         memDisponivel = _memDisponivel;
@@ -24,5 +27,12 @@ public class InfoPc {
         System.out.println(limite);
         System.out.println(memTotal - memDisponivel);
         return memTotal - memDisponivel > limite;
+    }
+    
+    public String isCheiaInt(long _memTotal, long _memDisponivel){
+        memDisponivel = _memDisponivel;
+        memTotal = _memTotal;
+        return "" + (100 - (memDisponivel * 100) / memTotal);
+        
     }
 }
