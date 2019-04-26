@@ -70,7 +70,7 @@ router.post('/cadastro', (req, res) => {
 
 router.get('/funcionarios', (res, req) =>{
 
-
+    //necessário dados no banco de dados para verificar se está funcionando
     getFuncionariosPCs(req.session.user.idGestor).then((resultado) =>{
         console.log(resultado);
     });
