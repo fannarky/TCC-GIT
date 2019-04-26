@@ -2,10 +2,11 @@
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper" [ngbCollapse]="isToggled">
       <div class="sidebar-heading">
-        <!-- <img src="icone.png" class="img"> -->
-        <br>
-        Bem vindo, {{ usuario }} 
-
+        <div class="navbar-text">
+          <img src="icone.png" class="img">
+          <br>
+          Bem vindo, {{ usuario }} 
+        </div>    
       </div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light">Home</a>
