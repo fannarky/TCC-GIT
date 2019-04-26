@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projeto-scss';
+  funcionario = "Juquinha";
+  nomePC = "PC do Juquinha";
+  processador = "Intel Core i7 7700"
 }
