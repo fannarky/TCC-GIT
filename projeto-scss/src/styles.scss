@@ -35,7 +35,7 @@ body {
       margin-left: 0;
     }
 
-    .desaparecer{
+    .aparecer{
       display: none;
     }
     
@@ -50,9 +50,10 @@ body {
   }
 
   @media (max-width: 768px){
-    #apareceber{
+    .apareceber{
       display: block;
       position: fixed;
+      
     }
   }
   
